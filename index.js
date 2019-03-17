@@ -2,6 +2,7 @@
 
 var Blockly = require('./_blockly')
 
+require('./arduino');
 require('./js');
 require('./php');
 require('./dart');
