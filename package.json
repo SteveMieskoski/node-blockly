@@ -20,8 +20,7 @@
     "gulp-insert": "^0.5.0",
     "gulp-rename": "^1.2.2",
     "gulp-replace": "^0.6.1",
-    "mocha": "^4.0.1",
-    "google-closure-library": "^20190301.0.0"
+    "mocha": "^4.0.1"
   },
   "scripts": {
     "build": "npm run blockly:upgrade && npm run addCustom && npm run compileBlockly && npm run prepublish",
