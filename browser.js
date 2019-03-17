@@ -13,6 +13,7 @@ Blockly.setLocale(require('./lib/i18n/en'))
 
 Blockly.Blocks = Object.assign(Blockly.Blocks, require('./lib/blocks_compressed_browser')(Blockly));
 
+Blockly.Arduino = require('./lib/arduino_compressed')(Blockly);
 Blockly.JavaScript = require('./lib/javascript_compressed')(Blockly);
 Blockly.Lua = require('./lib/lua_compressed')(Blockly);
 Blockly.Dart = require('./lib/dart_compressed')(Blockly);
