@@ -24,6 +24,7 @@
   },
   "scripts": {
     "blockly:upgrade": "git submodule init && git submodule update --recursive --remote",
+    "addCustom": "cp -r ./additionalBlocks/* ./blockly/blocks",
     "prepublish": "rm -rf lib && mkdir lib && gulp build",
     "test": "mocha test/*_test.js"
   },
