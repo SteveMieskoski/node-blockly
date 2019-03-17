@@ -20,10 +20,13 @@
     "gulp-insert": "^0.5.0",
     "gulp-rename": "^1.2.2",
     "gulp-replace": "^0.6.1",
-    "mocha": "^4.0.1"
+    "mocha": "^4.0.1",
+    "google-closure-library": "^20190301.0.0"
   },
   "scripts": {
-    "blockly:upgrade": "git submodule init && git submodule update --recursive --remote",
+    "build": "npm run blockly:upgrade && npm run addCustom && npm run compileBlockly && npm run prepublish",
+    "blockly:upgrade": "git submodule init && git submodule update --recursive --remote ",
+    "compileBlockly": "cd blockly && ./build.py",
     "addCustom": "cp -r ./additionalBlocks/* ./blockly/blocks",
     "prepublish": "rm -rf lib && mkdir lib && gulp build",
     "test": "mocha test/*_test.js"

@@ -67,6 +67,12 @@ gulp.task('blocks_browser', function() {
       .pipe(gulp.dest('lib'))
 });
 
+gulp.task('arduino', function() {
+  return gulp.src('blockly/arduino_compressed.js')
+    .pipe(insert.wrap('module.exports = function(Blockly){', 'return Blockly.Arduino;}'))
+    .pipe(gulp.dest('lib'))
+});
+
 gulp.task('js', function() {
   return gulp.src('blockly/javascript_compressed.js')
       .pipe(insert.wrap('module.exports = function(Blockly){', 'return Blockly.JavaScript;}'))
@@ -112,6 +118,7 @@ gulp.task('build', [
   'blockly_browser',
   'i18n',
   'js',
+  'arduino',
   'php',
   'dart',
   'python',
